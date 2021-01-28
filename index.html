@@ -98,18 +98,14 @@
             document.getElementById('trangition').style.display = "block";
         })
 
-        //deposit Handler
+      
         document.getElementById('addDeposit').addEventListener('click', function () {
-            // addAmount('deposit');
+          
             update('deposit', 'depositBalance');
         })
-        //balance Handler
-        // document.getElementById('addDeposit').addEventListener('click', function () {
-        //     // addAmount('deposit');
-        //     update('deposit','totalBalance');
-        // })
+       
         document.getElementById('addWithdraw').addEventListener('click', function () {
-            // addAmount('deposit');
+           
             update('withdraw', 'withdrawBalance');
         })
 
@@ -118,18 +114,17 @@
         //get element
 
         function addAmount(id) {
-            // document.getElementById('id').addEventListener('click', function () {
+          
             let cash = document.getElementById(id);
             let x = cash.value;
             let amount = parseFloat(x);
             cash.value = "";
             return amount;
-            // }
-            // )
+          
         }
         //update element
         function update(id1, id) {
-            //addAmount(id1);
+           
             let cash2 = document.getElementById(id).innerText;
             cash2 = parseFloat(cash2);
             let include = addAmount(id1);
@@ -148,22 +143,6 @@
 
         }
 
-
-
-//         document.getElementById('addDeposit').addEventListener('click', function () {
-//             let cash = document.getElementById('deposit');
-//             let x = cash.value;
-//             amount = parseFloat(x);
-//             cash.value = "";
-// 
-//             // console.log(typeof (amount));
-//             let cash2 = document.getElementById('depositBalance').innerText;
-//             console.log(cash2);
-//             cash2 = parseFloat(cash2);
-//             cash2 += amount;
-//             document.getElementById('depositBalance').innerText = cash2;
-//             console.log(cash2)
-//         });
 
 
 
