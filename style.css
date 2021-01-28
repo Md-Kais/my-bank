@@ -1,0 +1,48 @@
+body{
+    padding: 22vh 10vw;
+}
+#submitForm,.card{
+    /* border:2px solid rgb(204, 44, 44) ; */
+    padding: 4vh 4vw;
+
+    box-shadow:5px 10px 10px 5px gray;
+    /* border: 1px solid white; */
+    border-radius: 20px;
+    background-color: white;
+    color: #3e3e3e;
+    
+}
+#trangition{
+    display: none;
+    padding: 4vh 4vw;
+    text-align: center;
+}
+.card{
+    padding: 7px;
+    margin:5px;
+    text-align: left;
+}
+.depositCard{
+    background-color: cadetblue;
+}
+.withdrawCard{
+    background-color: lightsalmon;
+}
+.balanceCard{
+    background-color: orange;
+}
+.moneyCard{
+    margin-top:50px;
+}
+input{
+    border-radius: 20px;
+    padding:10px;
+    margin:10px;
+}
+.card a{
+    text-align: center;
+    margin: 0 auto;
+    background-color: orchid;
+    font-weight: 600;
+    color:rgb(14, 4, 0);
+}

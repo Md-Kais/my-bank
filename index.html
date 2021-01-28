@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Gta Bank</title>
+</head>
+
+<body>
+    <article id="submitForm">
+        <h1 class="text-center align-center justify-center ;" style="padding: 10px 0"><span
+                style="color:rebeccapurple;">Welcome to</span> <span style="color: coral; ">Gta Bank</span></h1>
+
+        <h3 style="color: teal; padding: 5px 0;">Login</h3>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <div class="mb-3 row">
+            <label for="inputPassword" class="col-form-label">Password</label>
+            <div class="col">
+                <input type="password" class="form-control" id="inputPassword">
+            </div>
+        </div>
+        <a class="btn btn-success btn " id="submit" href="#" role="button">Submit</a>
+    </article>
+    <article id="trangition">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="depositCard card">
+                    <br>
+                    <h2>Deposit</h2>
+                    <br>
+                    <h2>$<span id="depositBalance">00</span></h2>
+                    <br>
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="withdrawCard card">
+                    <br>
+                    <h2>Withdraw</h2>
+                    <br>
+                    <h2>$<span id="withdrawBalance">00</span></h2>
+                    <br>
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="balanceCard card">
+                    <br>
+                    <h2>Balance</h2>
+                    <br>
+                    <h2>$<span id="totalBalance">00</span></h2>
+                    <br>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6  moneyCard ">
+                <div class="card">
+                    <h2>Deposit</h2>
+                    <input type="text" id="deposit" placeholder="$ amount you want to deposit">
+                    <a class="btn btn-success btn " id="addDeposit" href="#" role="button">Submit</a>
+                </div>
+
+            </div>
+            <div class="col-md-6  moneyCard">
+                <div class="card ">
+                    <h2>Withdraw</h2>
+                    <input type="text" id="withdraw" placeholder="$ amount you want to withdraw">
+                    <a class="btn btn-success btn " id="addWithdraw" href="#" role="button">Submit</a>
+                </div>
+            </div>
+        </div>
+
+    </article>
+
+
+
+
+
+    <script>
+        document.getElementById('submit').addEventListener('click', function () {
+            document.getElementById('submitForm').style.display = "none";
+        })
+        document.getElementById('submit').addEventListener('click', function () {
+            document.getElementById('trangition').style.display = "block";
+        })
+
+        //deposit Handler
+        document.getElementById('addDeposit').addEventListener('click', function () {
+            // addAmount('deposit');
+            update('deposit', 'depositBalance');
+        })
+        //balance Handler
+        // document.getElementById('addDeposit').addEventListener('click', function () {
+        //     // addAmount('deposit');
+        //     update('deposit','totalBalance');
+        // })
+        document.getElementById('addWithdraw').addEventListener('click', function () {
+            // addAmount('deposit');
+            update('withdraw', 'withdrawBalance');
+        })
+
+
+
+        //get element
+
+        function addAmount(id) {
+            // document.getElementById('id').addEventListener('click', function () {
+            let cash = document.getElementById(id);
+            let x = cash.value;
+            let amount = parseFloat(x);
+            cash.value = "";
+            return amount;
+            // }
+            // )
+        }
+        //update element
+        function update(id1, id) {
+            //addAmount(id1);
+            let cash2 = document.getElementById(id).innerText;
+            cash2 = parseFloat(cash2);
+            let include = addAmount(id1);
+           
+            cash2 += include;
+             if (id1 === "withdraw") {
+                include = (-1 * include);
+            }
+            
+            document.getElementById(id).innerText = cash2;
+            let tot = document.getElementById('totalBalance').innerText;
+            tot = parseFloat(tot);
+            tot += include;
+            document.getElementById('totalBalance').innerText = tot;
+
+
+        }
+
+
+
+//         document.getElementById('addDeposit').addEventListener('click', function () {
+//             let cash = document.getElementById('deposit');
+//             let x = cash.value;
+//             amount = parseFloat(x);
+//             cash.value = "";
+// 
+//             // console.log(typeof (amount));
+//             let cash2 = document.getElementById('depositBalance').innerText;
+//             console.log(cash2);
+//             cash2 = parseFloat(cash2);
+//             cash2 += amount;
+//             document.getElementById('depositBalance').innerText = cash2;
+//             console.log(cash2)
+//         });
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.min.js"></script>
+</body>
+
+
+
+
+
+</html>
